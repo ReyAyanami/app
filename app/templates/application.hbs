@@ -1,2 +1,12 @@
-<h2>Fortes App</h2>
-{{outlet}}
+{{#md-navbar name='Fortes' class='indigo'}}
+  {{#link-to 'home' tagName='li'}}
+    {{link-to 'Home' 'home'}}
+  {{/link-to}}
+  {{#link-to 'about' tagName='li'}}
+    {{link-to 'About' 'about'}}
+  {{/link-to}}
+{{/md-navbar}}
+
+<div class="container">
+  {{outlet}}
+</div>
