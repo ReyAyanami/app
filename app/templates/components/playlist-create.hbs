@@ -1,0 +1,18 @@
+{{#md-modal close='cancel' class="test-modal"}}
+  <div class="modal-content">
+    {{md-input
+    value=url
+    label='Playlist URL'
+    class="col s6"
+    validate=true}}
+  </div>
+  <div class="modal-footer">
+    <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'create'}}>
+      Done!
+    </a>
+    <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button"
+      {{action 'cancel'}}>
+      Cancel
+    </a>
+  </div>
+{{/md-modal}}

@@ -1,17 +1,22 @@
 /* jshint node: true */
 
+const GOOGLE_API_CONFIGS = require('./gapi');
+
+
 module.exports = function (environment) {
   var ENV = {
-    modulePrefix:    'fortes',
-    environment:     environment,
-    rootURL:         '/',
-    locationType:    'auto',
-    EmberENV:        {
+    modulePrefix: 'fortes',
+    environment: environment,
+    rootURL: '/',
+    locationType: 'auto',
+    EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
     },
+
+    gapi: GOOGLE_API_CONFIGS,
 
     APP: {
       // Here you can pass flags/options to your application instance
@@ -19,12 +24,12 @@ module.exports = function (environment) {
     },
 
     materializeDefaults: {
-      modalIsFooterFixed:  false,
-      buttonIconPosition:  'left',
-      loaderSize:          'big',
-      loaderMode:          'indeterminate',
-      modalContainerId:    'materialize-modal-root-element',
-      dropdownInDuration:  300,
+      modalIsFooterFixed: false,
+      buttonIconPosition: 'left',
+      loaderSize: 'big',
+      loaderMode: 'indeterminate',
+      modalContainerId: 'materialize-modal-root-element',
+      dropdownInDuration: 300,
       dropdownOutDuration: 300
     }
   };

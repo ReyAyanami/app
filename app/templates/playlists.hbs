@@ -1,0 +1,20 @@
+<h3>
+  Playlists
+</h3>
+
+<div class="right-align">
+  <a {{action (toggle 'showCreateForm' this)}} class="btn-floating btn-large waves-effect waves-light red"><i
+    class="material-icons">add</i></a>
+</div>
+
+{{#each model as |playlist|}}
+  {{playlist.url}}
+{{/each}}
+
+{{#if showCreateForm}}
+  {{playlist-create
+  cancel=(toggle-action 'showCreateForm' this)
+  create=(action (queue (action 'create') (toggle 'showCreateForm' this)))
+  }}
+{{/if}}
+{{outlet}}
