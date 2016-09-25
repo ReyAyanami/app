@@ -65,9 +65,24 @@ class Playlist {
     this.playlistId = playlistId;
   }
 
-  getPage(pageToken) {
+  getInfo() {
     const options = {
       id: this.playlistId,
+      part: 'snippet'
+    };
+
+    const request = gapi.client.youtube.playlists.list(options);
+
+    return new Promise((resolve) => {
+      request.execute((response) => {
+        resolve(response);
+      });
+    });
+  }
+
+  getPage(pageToken) {
+    const options = {
+      playlistId: this.playlistId,
       part: 'snippet'
     };
 
@@ -75,7 +90,7 @@ class Playlist {
       options.pageToken = pageToken;
     }
 
-    const request = gapi.client.youtube.playlists.list(options);
+    const request = gapi.client.youtube.playlistItems.list(options);
 
     return new Promise((resolve) => {
       request.execute((response) => {
